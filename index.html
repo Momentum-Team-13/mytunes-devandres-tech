@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="main.js" defer></script>
-  <title>Music Search</title>
-</head>
-<body>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Music Search</title>
+  </head>
+  <body>
+    <section id="wrapper">
+      <h1>Music App</h1>
+      <div className="searchContainer">
+        <form id="form">
+          <input placeholder="Search for Artist" type="text" id="formInput" />
+          <button>Search</button>
+        </form>
+        <div id="formResults"></div>
+        <div id="musicPlayer"></div>
+        <!-- <div id="musicPlayer">
+          <audio controls="">
+            <source
+              src="https://audio-ssl.itunes.apple.com/itunes-assets/AudioPreview125/v4/06/4f/a4/064fa42b-8b9e-a59d-83b6-ec579bf5abbb/mzaf_3816250353681043183.plus.aac.p.m4a"
+            />
+          </audio>
+          <p>Now Player: The Motto (feat. Lil Wayne) [Bonus Track] - Drake</p>
+        </div> -->
+      </div>
+    </section>
+  </body>
 </html>
