@@ -2036,7 +2036,7 @@ document.addEventListener('DOMContentLoaded', () => {
     musicPlayer.appendChild(audioEl)
     musicPlayer.appendChild(
       document.createElement('p')
-    ).innerText = `Now Player: ${e.target.dataset.songInfo}`
+    ).innerText = `Now Playing: ${e.target.dataset.songInfo}`
   })
 
   const removeAllChildNodes = (parent) => {
