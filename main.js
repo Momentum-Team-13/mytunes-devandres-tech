@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
     const userInput = document.querySelector('#formInput').value
+    if (userInput.length <= 0) {
+      alert('You must enter an artist name')
+      return
+    }
     try {
       const response = await fetch(
         `${BASE_API_URL}/search?media=${MEDIA}&term=${userInput}`,
@@ -22,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const data = await response.json()
       renderSearchResults(data.results)
     } catch (error) {
-      console.log(error)
+      console.log('err', error)
+      alert('Sorry, an error has occurred please try again.')
     }
   })
 
