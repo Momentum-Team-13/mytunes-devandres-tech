@@ -4,18 +4,42 @@ body {
   font-family: 'Mulish', sans-serif;
 }
 
+audio {
+  width: 90%;
+  margin-top: 1rem;
+}
+
 #wrapper {
   padding-left: 2rem;
   padding-right: 2rem;
 }
 
-#wrapper > h1 {
-  text-align: center;
+#formResults {
+  margin-bottom: 10rem;
+  display: flex;
+  flex-wrap: wrap;
 }
 
-audio {
-  width: 90%;
-  margin-top: 1rem;
+#formResults > h2 {
+  margin-bottom: 1.5rem;
+  width: 100%;
+  display: block;
+}
+
+#musicPlayer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgb(15, 15, 15);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#wrapper > h1 {
+  text-align: center;
 }
 
 #form {
@@ -55,18 +79,35 @@ audio {
   cursor: pointer;
 }
 
-#formResults {
-  margin-bottom: 10rem;
+.resultItem {
+  width: 10rem;
+  margin-right: 1.5rem;
+  margin-bottom: 4rem;
+  height: fit-content;
+  text-align: center;
 }
 
-#musicPlayer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgb(31, 31, 31);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.resultItem:hover {
+  cursor: pointer;
+}
+
+.resultItem > img {
+  height: 10rem;
+  transition: all 0.3s;
+}
+
+.resultItem > img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s;
+}
+
+.resultItem > h3,
+h2 {
+  margin: 0;
+}
+
+.resultItem > h3 {
+  color: rgb(176, 176, 176);
+  margin-top: 0.3rem;
+  font-size: 1rem;
 }

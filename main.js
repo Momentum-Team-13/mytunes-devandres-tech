@@ -2024,19 +2024,20 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   formResults.addEventListener('click', (e) => {
-    console.log(e.target.dataset)
-    removeAllChildNodes(musicPlayer)
+    if (e.target.dataset.previewUrl !== undefined) {
+      removeAllChildNodes(musicPlayer)
 
-    const audioEl = document.createElement('audio')
-    audioEl.appendChild(document.createElement('source')).src =
-      e.target.dataset.previewUrl
-    audioEl.controls = true
-    audioEl.autoplay = true
+      const audioEl = document.createElement('audio')
+      audioEl.appendChild(document.createElement('source')).src =
+        e.target.dataset.previewUrl
+      audioEl.controls = true
+      audioEl.autoplay = true
 
-    musicPlayer.appendChild(audioEl)
-    musicPlayer.appendChild(
-      document.createElement('p')
-    ).innerText = `Now Playing: ${e.target.dataset.songInfo}`
+      musicPlayer.appendChild(audioEl)
+      musicPlayer.appendChild(
+        document.createElement('p')
+      ).innerText = `Now Playing: ${e.target.dataset.songInfo}`
+    }
   })
 
   const removeAllChildNodes = (parent) => {
@@ -2053,9 +2054,11 @@ document.addEventListener('DOMContentLoaded', () => {
     data.forEach((result) => {
       const formResultItem = document.createElement('div')
       const imageEl = document.createElement('img')
+
       imageEl.src = result.artworkUrl100
       imageEl.dataset.previewUrl = result.previewUrl
       imageEl.dataset.songInfo = `${result.trackName} - ${result.artistName}`
+      formResultItem.classList.add('resultItem')
       formResultItem.appendChild(imageEl)
       formResultItem.appendChild(document.createElement('h3')).innerText =
         result.trackName
